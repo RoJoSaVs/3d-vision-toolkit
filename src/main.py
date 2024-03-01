@@ -1,18 +1,24 @@
-import imageHandler
-import numpy as np
+import depth_estimation_module.depthEstimator as dem
 import matplotlib.pyplot as plt
+import os
 
 
-PATH = 'image-source/depth-estimation-dog.png'
+# ==========================================================================================
+# Example of how to use the module for the depth estimation with an example of file input
+# and the output result
+# ==========================================================================================
 
-# Original image set as a Matrix
-numpyArray = imageHandler.imageToArray(PATH)
-valueMatrix = imageHandler.imageArrayIterator(numpyArray)
 
-# Matrix to set the depth of each pixel
-indexesMatrix = imageHandler.highestToIndex(valueMatrix)
+fileName = 'street.png'
+inputPath = './image-source/'
+depthEstimatedImage = dem.depthImageEstimation(inputPath + fileName)
 
-pcdArray = []
-for rowIndex in range(0, len(indexesMatrix)):
-    for columnIndex in range(0, len(indexesMatrix[rowIndex])):
-        pcdArray.append([rowIndex + 1, columnIndex + 1, indexesMatrix[rowIndex][columnIndex]])
+
+# Creates the output directory if not already exist
+outputPath = './depth-estimation-images/'
+if not os.path.exists(outputPath):
+    os.makedirs(outputPath)
+
+
+outputFileName = outputPath + fileName
+plt.imsave(fname = outputFileName, arr = depthEstimatedImage)
