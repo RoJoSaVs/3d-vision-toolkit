@@ -9,11 +9,11 @@ import os
 # ==========================================================================================
 
 filename = 'street.png'
-inputPath = './image-source/'
+inputPath = './input/image-source/'
 depthEstimatedImage = dem.depthImageEstimation(inputPath + filename)
 
 # Creates the output directory if not already exist
-outputPath = './depth-estimation-images/'
+outputPath = './temp-files/depth-estimation-images/'
 if not os.path.exists(outputPath):
     os.makedirs(outputPath)
 
