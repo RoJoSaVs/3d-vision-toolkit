@@ -11,11 +11,11 @@ import pcd_handler_module.pcdFileHandler as pcdFileHandler
 filename = 'street.png'
 
 # Load the original image
-imageSourcePath = './image-source/'
+imageSourcePath = './input/image-source/'
 streetOriginal = imageIO.readImage(imageSourcePath + filename)
 
 # Load the depth estimated image
-depthImagesPath = './depth-estimation-images/'
+depthImagesPath = './temp-files/depth-estimation-images/'
 streetDepth = imageIO.readImage(depthImagesPath + filename)
 
 # Converts the image to grayscale
@@ -28,5 +28,5 @@ positionCalculatorResult = pcdE.positionCalculator(streetOriginal, streetG)
 numpyArrayResult = np.asarray(positionCalculatorResult)
 
 # # Stores the numpy array as a pcd file
-filename = './pcd-files/test.pcd'
+filename = './output/pcd-files/test.pcd'
 pcdFileHandler.pcdFileGenerator(numpyArrayResult, filename)

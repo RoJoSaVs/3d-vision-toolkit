@@ -6,7 +6,7 @@ import imageIO
 # ==========================================================================================
 
 # Read an image
-img_path = "./image-source/street.png"
+img_path = "./input/image-source/street.png"
 img = imageIO.readImage(img_path)
 
 # Display the shape of the image
@@ -14,5 +14,5 @@ print("Image shape:", img.shape)
 
 
 # Write the image
-output_path = "./image-source/output.jpg"
+output_path = "./output/image-source/output.jpg"
 imageIO.write_image(output_path, img)

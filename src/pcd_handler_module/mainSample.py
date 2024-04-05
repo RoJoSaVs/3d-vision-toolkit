@@ -18,7 +18,7 @@ xyz[:, 1] = np.reshape(mesh_y, -1)
 xyz[:, 2] = np.reshape(z_norm, -1)
 
 # Example of how to save a numpy array to a pcd-file
-pcdOutputPath = './pcd-files/'
+pcdOutputPath = './output/pcd-files/'
 filename = 'sample.pcd'
 # The output file can be seen on https://imagetostl.com/view-pcd-online
 pfh.pcdFileGenerator(xyz, pcdOutputPath + filename)
