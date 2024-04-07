@@ -2,22 +2,22 @@ import cv2
 
 
 # @brief Read an image from file using opencv and return it as a numpy array.
-# @param file_path: The path to the image file
+# @param filePath: The path to the image file
 # @return image: The image as a NumPy array
-def readImage(file_path):
+def readImage(filePath):
     try:
-        image = cv2.imread(file_path)
+        image = cv2.imread(filePath)
         return image
     except NameError:
         raise NameError
 
 
 # @brief Write an image to file using opencv
-# @param file_path: The path to save the image
+# @param filePath: The path to save the image
 # @param image: The image as a numpy array
-def writeImage(file_path, image):
+def writeImage(filePath, image):
     try:
-        cv2.imwrite(file_path, image)
+        cv2.imwrite(filePath, image)
     except NameError:
         raise NameError
 

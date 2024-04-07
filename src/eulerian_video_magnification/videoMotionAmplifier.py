@@ -16,7 +16,7 @@ import os
 # @note: If amplification parameter is really high can cause some noise on the result
 def videoMotionMagnification(inputVideoFile, outputVideoFile, amplification = 2):
     try:
-        magnification_string_command = f'python -mpython_eulerian_video_magnification {inputVideoFile} -m=MOTION -o={outputVideoFile} -a={amplification}'
-        os.system(magnification_string_command)
+        magnificationStringCommand = f'python -mpython_eulerian_video_magnification {inputVideoFile} -m=MOTION -o={outputVideoFile} -a={amplification}'
+        os.system(magnificationStringCommand)
     except NameError:
         raise NameError

@@ -4,8 +4,8 @@ import numpy as np
 # Local imports
 import pcdEstimator as pcdE
 sys.path.append('./src')
-import image_handler_module.imageIO as imageIO
-import pcd_handler_module.pcdFileHandler as pcdFileHandler
+import image_handler.imageIO as imageIO
+import pcd_handler.pcdFileHandler as pcdFileHandler
 
 
 filename = 'street.png'
