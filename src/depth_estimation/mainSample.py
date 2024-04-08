@@ -1,4 +1,4 @@
-import depthEstimator as dem
+import midasDepthEstimation as mde
 import matplotlib.pyplot as plt
 import os
 
@@ -8,12 +8,14 @@ import os
 # and the output result
 # ==========================================================================================
 
+dem = mde.DepthEstimation()
+
 filename = 'street.png'
 inputPath = './input/image-source/'
-depthEstimatedImage = dem.depthImageEstimation(inputPath + filename)
+depthEstimatedImage = dem.imageDepth(inputPath + filename)
 
 # Creates the output directory if not already exist
-outputPath = './temp-files/depth-estimation-images/'
+outputPath = './temp-files/'
 if not os.path.exists(outputPath):
     os.makedirs(outputPath)
 
