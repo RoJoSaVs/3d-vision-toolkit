@@ -4,18 +4,18 @@ import numpy as np
 # Local imports
 import pcdEstimator as pcdE
 sys.path.append('./src')
-import image_handler_module.imageIO as imageIO
-import pcd_handler_module.pcdFileHandler as pcdFileHandler
+import image_handler.imageIO as imageIO
+import pcd_handler.pcdFileHandler as pcdFileHandler
 
 
-filename = 'street.png'
+filename = 'result.png'
 
 # Load the original image
 imageSourcePath = './input/image-source/'
 streetOriginal = imageIO.readImage(imageSourcePath + filename)
 
 # Load the depth estimated image
-depthImagesPath = './temp-files/depth-estimation-images/'
+depthImagesPath = './output/'
 streetDepth = imageIO.readImage(depthImagesPath + filename)
 
 # Converts the image to grayscale

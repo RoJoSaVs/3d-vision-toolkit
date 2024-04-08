@@ -1,0 +1,13 @@
+{
+    "amplification": 5,
+    "date": "2024-04-07-18-16-50",
+    "file": "./test.avi",
+    "high": 3,
+    "levels": 3,
+    "low": 0.4,
+    "meta_target": "output/videos-motion\\test_motion_evm_2024-04-07-18-16-19.json",
+    "mode": "MOTION",
+    "output": "output/videos-motion",
+    "suffix": "motion",
+    "target": "output/videos-motion\\test_motion_evm_2024-04-07-18-16-19.avi"
+}
