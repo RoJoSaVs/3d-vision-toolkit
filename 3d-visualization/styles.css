@@ -1,0 +1,63 @@
+body {
+    margin: 0;
+    background-color: #000;
+    color: #fff;
+    font-family: Monospace;
+    font-size: 13px;
+    line-height: 24px;
+    overscroll-behavior: none;
+}
+
+
+#imageContainer {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    z-index: 1;
+}
+
+
+#oddOnesOutImage {
+    width: 30%;
+    animation-name: spin;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear; 
+}
+
+@keyframes spin {
+    from {
+        transform:rotate(0deg);
+    }
+    to {
+        transform:rotate(360deg);
+    }
+}
+
+
+.file-input-container {
+    padding: 10px;
+    display: inline-block;
+    position: absolute;
+    top: 0px;
+    width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+    z-index: 1;
+}
+
+
+.custom-file-input {
+    color: #ff0;
+    cursor: pointer;
+    padding: 10px 20px;
+    background-color: #333;
+    border: none;
+    border-radius: 5px;
+    display: inline-block;
+}
+
+
+.hidden-input {
+    display: none;
+}
