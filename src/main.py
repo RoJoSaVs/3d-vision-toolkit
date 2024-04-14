@@ -37,9 +37,11 @@ def main():
             return None
 
 
-        # Get the file name from the argument
-        fileName = sys.argv[1]
+        # Get the file name and path from the argument
+        filePathSource = sys.argv[1]
 
+        # Get the just the name of the file
+        fileName = os.path.basename(filePathSource)
 
         # Get the file extension from the argument
         fileExtensionEnum = CLI.checkFileExtension(fileName)
@@ -54,11 +56,11 @@ def main():
 
         # Process the algorithm as an image WITHOUT Euler Magnification
         elif (fileExtensionValue == ENUM.FILE_TYPE.IMAGE_FILE.value):
-            imageProcessResult = processImage()
+            imageProcessResult = processImage(fileName, filePathSource)
 
             # If the process return False means that something went wrong
             if ((isinstance(imageProcessResult, bool)) and (imageProcessResult == False)):
-                CLI.showErrorMessage('The video has not been processed correctly')
+                CLI.showErrorMessage('The image has not been processed correctly')
 
             else:
                 CLI.showSuccessMessage('The image has been processed!')

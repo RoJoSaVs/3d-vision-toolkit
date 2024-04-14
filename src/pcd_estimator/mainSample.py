@@ -24,9 +24,9 @@ streetG = imageIO.imageToGrayScale(streetDepth)
 # Creates the array with the depth using [x, y, z, rgb]
 positionCalculatorResult = pcdE.positionCalculator(streetOriginal, streetG)
 
-# # Turns the result to a numpy array of: [1 Row] [N columns] [4 numbers each column (x, y, z, rgb)]
+# Turns the result to a numpy array of: [1 Row] [N columns] [4 numbers each column (x, y, z, rgb)]
 numpyArrayResult = np.asarray(positionCalculatorResult)
 
-# # Stores the numpy array as a pcd file
+# Stores the numpy array as a pcd file
 filename = './output/pcd-files/test.pcd'
 pcdFileHandler.pcdFileGenerator(numpyArrayResult, filename)
