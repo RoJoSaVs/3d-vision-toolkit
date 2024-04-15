@@ -28,6 +28,7 @@ DefaultColor = C_END
 # =========================================================================== #
 # Folder path to store temporary files
 TEMP_FOLDER = './temp-files/'
+TEMP_VIDEO_MOTION_AMPLIFICATION_IMAGES = 'videos-motion-images/'
 
 # Folder path to store the resulting files
 OUTPUT_FOLDER = './output/'

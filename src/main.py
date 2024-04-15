@@ -68,7 +68,7 @@ def main():
 
         # Process the algorithm as an video WITH Euler Magnification
         elif (fileExtensionValue == ENUM.FILE_TYPE.VIDEO_FILE.value):
-            videoProcessResult = processVideo()
+            videoProcessResult = processVideo(fileName, filePathSource)
 
             # If the process return False means that something went wrong
             if ((isinstance(videoProcessResult, bool)) and (videoProcessResult == False)):
