@@ -21,16 +21,3 @@ def positionCalculator(matrixImage, grayScaleImage):
 
     except NameError:
         raise NameError
-
-
-# @brief Map an image represented matrix to an matrix with index of the pixel color in the position
-# @param matrixImage: Numpy matrix with the pixel colors of the image with the depth estimation
-# @param colorScale: Name of the scale that will be used for the estimation by default it uses viridis
-# @return depthIndexMatrix: Matrix filled with the index from 0 to 255 based on the color of the pixel in the position
-def imageToWeight(matrixImage, grayScaleImage, colorScale = 'viridis'):
-    try:
-        positionArray = positionCalculator(grayScaleImage)
-        return positionArray
-
-    except NameError:
-        raise NameError

@@ -62,3 +62,24 @@ def checkFileExtension(fileName):
             return ENUMS.FILE_TYPE.ANY_FILE
     except:
         showErrorMessage('The files cannot be processed')
+
+
+# @brief Change the extension of a file
+# @param filePath: Folder location where the file to be renamed is
+# @param newExtension: The new extension of the file
+def changeExtension(filePath, newExtension):
+    baseName, _ = os.path.splitext(filePath)
+    newFilePath = baseName + "." + newExtension
+    os.rename(filePath, newFilePath)
+
+
+# @brief Find a file on a specific folder
+# @param filePath: Folder path where will be looking for the file
+# @param fileExtension: Extension of the file that we are looking for
+# @return folderFileFound: File found in the filePath that has fileExtension extension
+def getFileInFolder(filePath, fileExtension = '.avi'):
+    folderFileFound = ''
+    for file in os.listdir(filePath):
+        if file.endswith(fileExtension):
+            folderFileFound = os.path.join(filePath, file)
+    return folderFileFound

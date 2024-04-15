@@ -24,3 +24,14 @@ InfoColor = C_BOLD + C_LIGHT_BLUE
 SuccessColor = C_BOLD + C_GREEN
 DividerColor = C_BOLD + C_YELLOW
 DefaultColor = C_END
+
+# =========================================================================== #
+# Folder path to store temporary files
+TEMP_FOLDER = './temp-files/'
+TEMP_VIDEO_MOTION_AMPLIFICATION_IMAGES = 'videos-motion-images/'
+
+# Folder path to store the resulting files
+OUTPUT_FOLDER = './output/'
+OUTPUT_PCD = 'pcd-files/'
+OUTPUT_STACKING = 'stacking-result/'
+OUTPUT_VIDEO_MOTION_AMPLIFICATION = 'videos-motion/'
