@@ -1,6 +1,7 @@
 import sys
 import os
 import numpy as np
+import cv2
 
 # Add 'src/cli' directory to sys.path to use import inside different files
 sys.path.append('src/cli/')
@@ -53,6 +54,7 @@ def processVideo(fileName, filePathSource):
 
         # Loads the new image
         resultImageAfterStacking = imageIO.readImage(resultingImageStackingFolder)
+        resultImageAfterStacking = cv2.flip(resultImageAfterStacking, 0)
         grayScaleImage = imageIO.imageToGrayScale(resultImageAfterStacking)
 
         # PCD with the stacking result

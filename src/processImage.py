@@ -1,5 +1,6 @@
 import sys
 import numpy as np
+import cv2
 
 # Add 'src/cli' directory to sys.path to use import inside different files
 sys.path.append('src/cli/')
@@ -29,6 +30,8 @@ def processImage(fileName, filePathSource):
 
         originalImage = imageIO.readImage(filePathSource)
         depthImage = imageIO.readImage(tempFolder)
+        originalImage = cv2.flip(originalImage, 0)
+        depthImage = cv2.flip(depthImage, 0)
         grayScaleImageAsNumpy = imageIO.imageToGrayScale(depthImage)
         CLI.showInfoMessage('Loading the image to realize the transformation to a 3D file')
 
