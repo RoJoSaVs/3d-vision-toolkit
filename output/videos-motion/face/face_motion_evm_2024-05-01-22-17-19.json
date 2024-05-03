@@ -1,0 +1,13 @@
+{
+    "amplification": 50,
+    "date": "2024-05-01-22-17-58",
+    "file": "./temp-files/face.avi",
+    "high": 3,
+    "levels": 3,
+    "low": 0.4,
+    "meta_target": "./output/videos-motion/face\\face_motion_evm_2024-05-01-22-17-19.json",
+    "mode": "MOTION",
+    "output": "./output/videos-motion/face",
+    "suffix": "motion",
+    "target": "./output/videos-motion/face\\face_motion_evm_2024-05-01-22-17-19.avi"
+}

@@ -38,7 +38,7 @@ def processVideo(fileName, filePathSource):
         CLI.showInfoMessage('Video from images has been created!')
 
         videoMotionAmplificationFolder = CONST.OUTPUT_FOLDER + CONST.OUTPUT_VIDEO_MOTION_AMPLIFICATION + filenameWithoutExtension
-        videoMotionAmplifier.videoMotionMagnification(imageToVideoFileInFolder, videoMotionAmplificationFolder)
+        videoMotionAmplifier.videoMotionMagnification(imageToVideoFileInFolder, videoMotionAmplificationFolder, 50)
         CLI.showInfoMessage('Video motion has been amplified!')
 
         # Video to images
@@ -57,8 +57,12 @@ def processVideo(fileName, filePathSource):
         resultImageAfterStacking = cv2.flip(resultImageAfterStacking, 0)
         grayScaleImage = imageIO.imageToGrayScale(resultImageAfterStacking)
 
+        # Loads the first frame of the video to set color to the pcd
+        firstFrame = getFirstFrame(filePathSource)
+        firstFrame = cv2.flip(firstFrame, 0)
+
         # PCD with the stacking result
-        pcdArray = pcdEstimator.positionCalculator(resultImageAfterStacking, grayScaleImage)
+        pcdArray = pcdEstimator.positionCalculator(firstFrame, grayScaleImage)
         pcdNumpyArray = np.asarray(pcdArray)
         CLI.showInfoMessage('The 3D representation of the image has been done!')
 
@@ -72,4 +76,19 @@ def processVideo(fileName, filePathSource):
 
     except:
         return False
+
+
+# @brief This method reads the first frame of a video
+# @param fileName: Name of the video file that will be processed
+# @return frame: The first frame of a video as a NumPy array
+def getFirstFrame(filename = ''):
+    try:
+        video = cv2.VideoCapture(filename) # Open the video file
+        video.set(1, 0) # Set the specific frame to read
+        ret, frame = video.read() # Read the next frame from the video
+        frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
+        return frame
+
+    except:
+        raise NameError
 

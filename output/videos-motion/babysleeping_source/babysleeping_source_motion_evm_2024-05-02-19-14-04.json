@@ -1,0 +1,13 @@
+{
+    "amplification": 50,
+    "date": "2024-05-02-19-15-24",
+    "file": "./temp-files/babysleeping_source.avi",
+    "high": 3,
+    "levels": 3,
+    "low": 0.4,
+    "meta_target": "./output/videos-motion/babysleeping_source\\babysleeping_source_motion_evm_2024-05-02-19-14-04.json",
+    "mode": "MOTION",
+    "output": "./output/videos-motion/babysleeping_source",
+    "suffix": "motion",
+    "target": "./output/videos-motion/babysleeping_source\\babysleeping_source_motion_evm_2024-05-02-19-14-04.avi"
+}
