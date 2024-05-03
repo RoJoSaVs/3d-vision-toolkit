@@ -1,0 +1,13 @@
+{
+    "amplification": 50,
+    "date": "2024-05-03-15-36-31",
+    "file": "./temp-files/wrist.avi",
+    "high": 3,
+    "levels": 3,
+    "low": 0.4,
+    "meta_target": "./output/videos-motion/wrist\\wrist_motion_evm_2024-05-03-15-33-48.json",
+    "mode": "MOTION",
+    "output": "./output/videos-motion/wrist",
+    "suffix": "motion",
+    "target": "./output/videos-motion/wrist\\wrist_motion_evm_2024-05-03-15-33-48.avi"
+}
