@@ -29,8 +29,10 @@ def processImage(fileName, filePathSource):
         CLI.showInfoMessage('The resulting depth estimation image can be found in the folder: ' + tempFolder)
 
         originalImage = imageIO.readImage(filePathSource)
-        depthImage = imageIO.readImage(tempFolder)
+        originalImage = cv2.cvtColor(originalImage, cv2.COLOR_BGR2RGB)
         originalImage = cv2.flip(originalImage, 0)
+
+        depthImage = imageIO.readImage(tempFolder)
         depthImage = cv2.flip(depthImage, 0)
         grayScaleImageAsNumpy = imageIO.imageToGrayScale(depthImage)
         CLI.showInfoMessage('Loading the image to realize the transformation to a 3D file')

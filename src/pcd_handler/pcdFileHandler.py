@@ -45,14 +45,14 @@ def pcdFileGeneratorManual(numpyArray, filename):
             pcdFile.write('VERSION 0.7\n')
             pcdFile.write('FIELDS x y z rgb\n')
             pcdFile.write('SIZE 4 4 4 4\n')
-            pcdFile.write('TYPE F F F F\n')
+            pcdFile.write('TYPE F F F I\n')
             pcdFile.write('COUNT 1 1 1 1\n')
             pcdFile.write('WIDTH {}\n'.format(len(numpyArray)))
             pcdFile.write('HEIGHT 1\n')
             pcdFile.write('POINTS {}\n'.format(len(numpyArray)))
             pcdFile.write('DATA ascii\n')
             for item in numpyArray:
-                pcdFile.write('{:.6f} {:.6f} {:.6f} {:d}\n'.format(item[0], item[1], item[2], item[3]))
+                pcdFile.write('{:.6f} {:.6f} {:.6f} {:.6f}\n'.format(item[0], item[1], item[2], item[3]))
 
     except NameError:
         raise NameError
